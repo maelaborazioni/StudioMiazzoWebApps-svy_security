@@ -1,0 +1,9 @@
+foreignDataSource:"db:/ma_anagrafiche/tab_sw",
+items:[
+{foreignColumnName:"codcategoriasw",primaryDataProviderID:"name",typeid:23,uuid:"89D87B33-8F90-435B-B7B8-A75F397DADEE"}
+],
+joinType:1,
+name:"sec_module_to_tab_sw",
+primaryDataSource:"db:/svy_framework/sec_module",
+typeid:22,
+uuid:"AB0A9C4D-F3C1-4EB0-8A49-6D7C6CAB2692"

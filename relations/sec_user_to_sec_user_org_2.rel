@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_user_org",
+items:[
+{foreignColumnName:"user_id",primaryDataProviderID:"user_id",typeid:23,uuid:"A3DC24BD-F0C8-426E-9D3D-0FDD174AD1D9"}
+],
+name:"sec_user_to_sec_user_org_2",
+primaryDataSource:"db:/svy_framework/sec_user",
+typeid:22,
+uuid:"C61A048F-D8F3-4FB4-8117-24B788431F51"

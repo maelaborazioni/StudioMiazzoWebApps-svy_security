@@ -1,0 +1,11 @@
+addEmptyValue:1,
+dataProviderID1:"module_id",
+dataProviderID2:"name",
+dataSource:"db:/svy_framework/sec_module",
+name:"svy_sec_modules_com",
+returnDataProviders:1,
+separator:null,
+showDataProviders:2,
+typeid:34,
+uuid:"49d4aaba-9378-4fea-bd0c-dbcd02d950bd",
+valueListType:1

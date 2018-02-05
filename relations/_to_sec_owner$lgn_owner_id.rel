@@ -1,0 +1,9 @@
+foreignDataSource:"db:/svy_framework/sec_owner",
+items:[
+{foreignColumnName:"owner_id",primaryDataProviderID:"scopes.globals.svy_sec_lgn_owner_id",typeid:23,uuid:"0281D750-69F9-48F6-A45E-1D42800972AB"}
+],
+joinType:1,
+name:"_to_sec_owner$lgn_owner_id",
+primaryDataSource:"db:/svy_framework/sec_owner",
+typeid:22,
+uuid:"4D75C67F-C95A-4F7A-83F0-35DBC8FD401B"

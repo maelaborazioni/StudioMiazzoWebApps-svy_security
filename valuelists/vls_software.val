@@ -1,0 +1,11 @@
+addEmptyValue:1,
+dataProviderID1:"descrizione",
+dataProviderID2:"codice",
+name:"vls_software",
+relationName:"sec_owner_in_module_to_sec_module.sec_module_to_tab_sw",
+returnDataProviders:2,
+showDataProviders:1,
+sortOptions:"descrizione asc, codice asc",
+typeid:34,
+uuid:"46331F56-BB50-49EF-AE6A-D7702D0D38E5",
+valueListType:1

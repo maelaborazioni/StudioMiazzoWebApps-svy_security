@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/nav_navigation_keys",
+items:[
+{foreignColumnName:"security_key_id",primaryDataProviderID:"security_key_id",typeid:23,uuid:"07e4343f-828d-45b7-b378-ee4fb1484cc9"}
+],
+name:"sec_security_key_to_nav_navigation_keys",
+primaryDataSource:"db:/svy_framework/sec_security_key",
+typeid:22,
+uuid:"cd0a662a-6087-4425-956e-2353038ee48c"

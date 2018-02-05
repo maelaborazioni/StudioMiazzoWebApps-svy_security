@@ -1,0 +1,12 @@
+addEmptyValue:1,
+dataProviderID1:"user_id",
+dataProviderID2:"user_name",
+dataSource:"db:/svy_framework/sec_user",
+name:"svy_sec_users",
+returnDataProviders:1,
+separator:null,
+showDataProviders:2,
+sortOptions:"user_name asc",
+typeid:34,
+uuid:"92F3D680-CAC3-4EEA-A2D5-F23F74AF24C0",
+valueListType:1

@@ -1,0 +1,9 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_module",
+items:[
+{foreignColumnName:"module_id",primaryDataProviderID:"globals.svy_sec_mod_id",typeid:23,uuid:"2b532804-9faa-4c41-8f3a-d3599e6e9369"}
+],
+name:"_to_sec_module$mod_id",
+primaryDataSource:"db:/svy_framework/sec_module",
+typeid:22,
+uuid:"2820b4fd-71e6-4e12-b562-7564e083e84d"

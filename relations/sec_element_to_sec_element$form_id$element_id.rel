@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_element",
+items:[
+{foreignColumnName:"servoy_element_id",primaryDataProviderID:"globals.svy_sec_elt_id",typeid:23,uuid:"98495d71-04c7-46bc-b65f-03ce53d85366"},
+{foreignColumnName:"servoy_form_id",primaryDataProviderID:"globals.svy_sec_form_id",typeid:23,uuid:"a7bd25e2-deb3-4871-bdac-f6bdc28c3d96"}
+],
+name:"sec_element_to_sec_element$form_id$element_id",
+primaryDataSource:"db:/svy_framework/sec_element",
+typeid:22,
+uuid:"4a544d78-b0d2-44b6-a4a6-c953273a647a"

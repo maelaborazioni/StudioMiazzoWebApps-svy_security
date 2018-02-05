@@ -1,0 +1,9 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_security_key",
+items:[
+{foreignColumnName:"security_key_id",primaryDataProviderID:"security_key_id",typeid:23,uuid:"b425c9d0-4baf-4201-acf0-547a2e52a336"}
+],
+name:"sec_user_right_to_sec_security_key",
+primaryDataSource:"db:/svy_framework/sec_user_right",
+typeid:22,
+uuid:"b3ed3d02-dfca-43db-b1a8-2a95df3ff388"

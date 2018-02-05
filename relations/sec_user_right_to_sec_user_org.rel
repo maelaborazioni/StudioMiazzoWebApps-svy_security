@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_user_org",
+items:[
+{foreignColumnName:"user_org_id",operator:0,primaryDataProviderID:"user_org_id",typeid:23,uuid:"A4C93EEF-ABC4-4C3D-BC22-934951900918"}
+],
+joinType:0,
+name:"sec_user_right_to_sec_user_org",
+primaryDataSource:"db:/svy_framework/sec_user_right",
+typeid:22,
+uuid:"64895B31-0BC7-4903-A8E0-889BEFDCC9B8"

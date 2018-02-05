@@ -1,0 +1,6 @@
+dataSource:"db:/svy_framework/sec_group",
+onAfterDeleteMethodID:"FB9011DE-BD5E-4143-84E8-0459097EBE0F",
+onAfterInsertMethodID:"1EC57B5F-7F1C-40CF-8697-6950C6E59B94",
+onAfterUpdateMethodID:"0DC8E2F3-538D-4EC8-992C-C275CC1BEA4E",
+typeid:39,
+uuid:"6c8b2856-3a41-4469-8b9f-eef4b325910d"

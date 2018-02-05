@@ -1,0 +1,9 @@
+customValues:"active|1
+disabled|0",
+name:"svy_sec_status",
+returnDataProviders:1,
+separator:null,
+showDataProviders:1,
+sortOptions:null,
+typeid:34,
+uuid:"d40e8991-9104-4d23-8657-f3a6289aae20"

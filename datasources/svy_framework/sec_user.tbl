@@ -1,0 +1,6 @@
+dataSource:"db:/svy_framework/sec_user",
+onAfterDeleteMethodID:"05555344-71D2-45D0-A68F-936456896998",
+onAfterInsertMethodID:"205578C4-45E7-43C0-9C48-95C36E9580A6",
+onAfterUpdateMethodID:"47AEF0E9-2D73-42F2-A43B-FA44D716F060",
+typeid:39,
+uuid:"b6a81022-6897-4e81-94e4-48cdc067b5e5"

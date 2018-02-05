@@ -1,0 +1,6 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_security_key_to_cathegory",
+name:"sec_security_key_to_cathegory_to_sec_security_key_to_cathegory",
+primaryDataSource:"db:/svy_framework/sec_security_key_to_cathegory",
+typeid:22,
+uuid:"80D250A0-CAE2-420F-8579-48542F60D01B"

@@ -1,0 +1,11 @@
+addEmptyValue:1,
+dataProviderID1:"element_name",
+dataSource:"db:/svy_framework/sec_element",
+name:"svy_sec_element_names",
+returnDataProviders:1,
+separator:null,
+showDataProviders:1,
+sortOptions:"element_name asc",
+typeid:34,
+uuid:"31ecf138-7fa4-4e29-9997-747cf5e2dc8c",
+valueListType:1

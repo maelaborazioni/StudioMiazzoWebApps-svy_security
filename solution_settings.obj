@@ -1,0 +1,6 @@
+firstFormID:"-1",
+i18nDataSource:"db:/svy_framework/i18n_messages",
+loginFormID:"-1",
+modulesNames:"svy_mod_dialogs,svy_nav_globals,svy_nav_lookup_windows",
+typeid:43,
+uuid:"096d9c8b-ac32-40a1-aca5-6c77858008e1"

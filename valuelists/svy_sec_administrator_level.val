@@ -1,0 +1,8 @@
+addEmptyValue:0,
+customValues:"i18n:svy.fr.lbl.system_administrator|1
+i18n:svy.fr.lbl.super_administrator|2",
+name:"svy_sec_administrator_level",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"A15D45C2-08ED-4962-AAEA-A4287D6BB414"

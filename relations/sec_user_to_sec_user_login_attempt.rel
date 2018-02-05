@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_user_login_attempt",
+items:[
+{foreignColumnName:"user_id",operator:0,primaryDataProviderID:"user_id",typeid:23,uuid:"BA489445-5FBC-4392-929B-1ACE99BB41EB"}
+],
+joinType:0,
+name:"sec_user_to_sec_user_login_attempt",
+primaryDataSource:"db:/svy_framework/sec_user",
+typeid:22,
+uuid:"9B7C371C-3F7E-475C-AAB5-811DF9EB11EB"

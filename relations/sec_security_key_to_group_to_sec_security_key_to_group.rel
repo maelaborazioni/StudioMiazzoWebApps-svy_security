@@ -1,0 +1,7 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_security_key_to_group",
+joinType:1,
+name:"sec_security_key_to_group_to_sec_security_key_to_group",
+primaryDataSource:"db:/svy_framework/sec_security_key_to_group",
+typeid:22,
+uuid:"D9C2C937-475A-451A-9BED-DADBA811BD72"

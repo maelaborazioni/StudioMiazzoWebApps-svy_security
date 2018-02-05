@@ -1,0 +1,12 @@
+addEmptyValue:1,
+dataProviderID1:"organization_id",
+dataProviderID2:"name",
+dataSource:"db:/svy_framework/sec_organization",
+name:"svy_sec_organizations",
+returnDataProviders:1,
+separator:null,
+showDataProviders:2,
+sortOptions:"name asc",
+typeid:34,
+uuid:"ECABF046-ABE5-4429-A1F7-540F04551D35",
+valueListType:1

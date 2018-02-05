@@ -1,0 +1,9 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_group",
+items:[
+{foreignColumnName:"group_id",primaryDataProviderID:"group_id",typeid:23,uuid:"43f03a91-fe30-4ee4-8aac-b2814c5e0f70"}
+],
+name:"sec_user_in_group_to_sec_group",
+primaryDataSource:"db:/svy_framework/sec_user_in_group",
+typeid:22,
+uuid:"c5d53bc4-1957-49ef-933c-9fbcdf22901b"

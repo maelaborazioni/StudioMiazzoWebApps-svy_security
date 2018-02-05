@@ -1,0 +1,9 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_owner",
+items:[
+{foreignColumnName:"owner_id",primaryDataProviderID:"owner_id",typeid:23,uuid:"045713ee-9d76-4e3f-991f-76c98127df47"}
+],
+name:"sec_owner_in_module_to_sec_owner",
+primaryDataSource:"db:/svy_framework/sec_owner_in_module",
+typeid:22,
+uuid:"ccd75541-1d2e-488b-9f87-e5c1e3a844b7"

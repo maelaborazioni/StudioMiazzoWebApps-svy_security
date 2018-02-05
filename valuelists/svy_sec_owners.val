@@ -1,0 +1,12 @@
+addEmptyValue:0,
+dataProviderID1:"owner_id",
+dataProviderID2:"name",
+dataSource:"db:/svy_framework/sec_owner",
+name:"svy_sec_owners",
+returnDataProviders:1,
+separator:null,
+showDataProviders:2,
+sortOptions:"name asc",
+typeid:34,
+uuid:"d016b3a6-eebb-49c0-872d-b188b2fd8d5f",
+valueListType:1

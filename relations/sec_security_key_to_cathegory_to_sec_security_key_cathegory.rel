@@ -1,0 +1,9 @@
+foreignDataSource:"db:/svy_framework/sec_security_key_cathegory",
+items:[
+{foreignColumnName:"sec_security_key_cathegory_id",primaryDataProviderID:"sec_security_key_cathegory_id",typeid:23,uuid:"E64B5E39-72E2-4B28-A7D9-87038B7C6F11"}
+],
+joinType:1,
+name:"sec_security_key_to_cathegory_to_sec_security_key_cathegory",
+primaryDataSource:"db:/svy_framework/sec_security_key_to_cathegory",
+typeid:22,
+uuid:"BB16122B-0AB1-473D-8A3A-130CDE7F8993"

@@ -1,0 +1,11 @@
+addEmptyValue:1,
+dataProviderID1:"form_name",
+dataSource:"db:/svy_framework/sec_element",
+name:"svy_sec_form_names",
+returnDataProviders:1,
+separator:null,
+showDataProviders:1,
+sortOptions:"form_name asc",
+typeid:34,
+uuid:"d589642c-87f2-4064-88d4-f89c717e3b5b",
+valueListType:1

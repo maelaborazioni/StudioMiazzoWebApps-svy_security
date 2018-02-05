@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+foreignDataSource:"db:/svy_framework/sec_security_key_to_cathegory",
+items:[
+{foreignColumnName:"security_key_id",primaryDataProviderID:"security_key_id",typeid:23,uuid:"6C11AE6E-4FCF-4A88-911D-D395A1842B97"}
+],
+joinType:1,
+name:"sec_security_key_to_sec_security_key_to_cathegory",
+primaryDataSource:"db:/svy_framework/sec_security_key",
+typeid:22,
+uuid:"7F7D058D-7F62-49B0-8225-D70A7504B990"

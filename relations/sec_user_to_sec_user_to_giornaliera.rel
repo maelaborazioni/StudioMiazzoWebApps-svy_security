@@ -1,0 +1,12 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/svy_framework/sec_user_to_giornaliera",
+items:[
+{foreignColumnName:"user_id",primaryDataProviderID:"user_id",typeid:23,uuid:"57E8BEA0-7C71-487F-9E65-C21496ACDBEE"}
+],
+joinType:1,
+name:"sec_user_to_sec_user_to_giornaliera",
+primaryDataSource:"db:/svy_framework/sec_user",
+typeid:22,
+uuid:"3C7ED7A3-A5D6-4489-AA1C-FAD827B47930"

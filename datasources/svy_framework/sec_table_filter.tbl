@@ -1,0 +1,6 @@
+dataSource:"db:/svy_framework/sec_table_filter",
+onAfterDeleteMethodID:"318A37C5-F1A9-4DEA-A636-23AB9306D479",
+onAfterInsertMethodID:"B3C7586B-316B-4FB9-95DD-0F9F8BBB6D27",
+onAfterUpdateMethodID:"04F56CB5-2EE6-4E22-92CA-DCCD3F615DF3",
+typeid:39,
+uuid:"194681DB-F3FA-4D47-ADB1-5DD9F276DE0F"
