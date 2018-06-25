@@ -425,6 +425,19 @@ typeid:7,
 uuid:"9D68B08C-6904-4FAC-BA97-E8011D16C5F2"
 },
 {
+formIndex:13804,
+location:"860,246",
+onActionMethodID:"E7F44AAF-DCD3-4CF3-8DB7-AFB39849A0D4",
+onDoubleClickMethodID:"-1",
+onRightClickMethodID:"-1",
+rolloverCursor:12,
+showClick:false,
+styleClass:"btn_invia",
+text:"Test mail",
+typeid:7,
+uuid:"A25A461C-0474-40D0-874D-523D83C969BE"
+},
+{
 anchors:3,
 location:"530,40",
 size:"80,20",

@@ -229,3 +229,44 @@ function unfilterOwner(event) {
 	
 	foundset.loadAllRecords();
 }
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @private
+ *
+ * @properties={typeid:24,uuid:"E7F44AAF-DCD3-4CF3-8DB7-AFB39849A0D4"}
+ */
+function onActionMailButton(event) 
+{
+		var mailAddress = ['giovanni.tizzoni@studiomiazzo.it','giovanni.tizzoni@gmail.com'];
+		var properties = new Array();
+		properties[0] = 'mail.smtp.host=smtp.sparkpostmail.com';
+		properties[1] = 'mail.smtp.port=587';
+		properties[2] = 'mail.smtp.auth=true';
+		properties[3] = 'mail.smtp.username=SMTP_Injection';
+		properties[4] = 'mail.smtp.password=015e2b306072ac4b7de06a8143a98e16cc550ae6';
+		properties[5] = 'mail.smtp.starttls.enable=true';
+		var subject = "Test mail PresenzaSemplice";
+		var msgText = "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head>";
+		msgText += "<body>Cordiali saluti.</body></html>";
+		
+		for(var i = 0; i < mailAddress.length; i++)
+		{
+			var success = plugins.mail.sendMail
+			(mailAddress[i],
+				'I am X <assistenza@studiomiazzo.it>',
+				subject,
+				msgText,
+				null,
+				null,
+				null,
+				properties);
+			if (!success)
+				globals.svy_mod_dialogs_global_showErrorDialog(mailAddress[i],plugins.mail.getLastSendMailExceptionMsg(),'OK');
+			else
+				globals.svy_mod_dialogs_global_showInfoDialog(mailAddress[i],'Test mail inviata correttamente','OK');
+		}	
+}

@@ -21,7 +21,9 @@ function deleteRecord(event) {
  * @properties={typeid:24,uuid:"7D13241E-B797-456C-8902-4824B248E10C"}
  */
 function addRecord(event) {
-	var _query = 'SELECT security_key_id FROM sec_security_key WHERE security_key_id NOT IN (SELECT security_key_id FROM sec_user_right WHERE user_org_id = ?)';
+	var _query = 'SELECT security_key_id FROM sec_security_key \
+	              WHERE security_key_id NOT IN (SELECT security_key_id FROM sec_user_right WHERE user_org_id = ?) \
+	              ORDER BY name';
 	var _arguments = [forms.svy_sec_main_user_security.foundset.user_org_id];
 	var _dataSet = databaseManager.getDataSetByQuery(globals.nav_db_framework, _query, _arguments, -1);
 	

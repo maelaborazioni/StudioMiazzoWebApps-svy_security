@@ -244,6 +244,118 @@ function svy_sec_getSecurityKeys() {
 }
 
 /**
+ * TODO generated, please specify type and doc for the params
+ * @param _user_org_id
+ *
+ * @properties={typeid:24,uuid:"EE547EC1-3928-447E-838A-482E0ACC515E"}
+ */
+function svy_sec_getUserOrgSecurityKeys(_user_org_id) {
+	var _server = globals.nav_db_framework
+	var _query = '	SELECT DISTINCT	surd.security_key_id \
+					FROM			sec_user_right surd \
+					WHERE			(surd.security_key_id IN \
+							(SELECT	ssk.security_key_id  \
+							FROM	sec_security_key ssk, \
+									sec_user_right sur, \
+									sec_user_in_group sug \
+							WHERE	ssk.security_key_id = sur.security_key_id \
+							AND		sur.group_id = sug.group_id \
+							AND		sug.user_org_id = ? \
+							AND		(ssk.module_id IS NULL OR ssk.module_id IN \
+									(SELECT	som.module_id \
+									FROM	sec_owner_in_module som \
+									WHERE	som.owner_id = ? \
+									AND		(som.start_date IS NULL OR som.start_date <= ?) \
+									AND		(som.end_date IS NULL OR som.end_date >= ? )))) \
+					AND NOT EXISTS \
+						(SELECT	* \
+						FROM	sec_user_right surd2 \
+						WHERE	surd.security_key_id = surd2.security_key_id \
+						AND		surd2.user_org_id = ? \
+						AND		surd2.is_denied = 1)) \
+					OR	surd.user_org_id = ? \
+					AND	(surd.is_denied IS NULL \
+					OR	surd.is_denied = 0) ';
+
+	// MAVariazione - also consider keys associated with the modules only
+//	var _query = "SELECT DISTINCT	surd.security_key_id \
+//					FROM	\
+//						sec_user_right surd \
+//					WHERE	\
+//						(\
+//						surd.security_key_id IN\
+//								( \
+//									SELECT	ssk.security_key_id \
+//									FROM	sec_security_key ssk \
+//									INNER JOIN sec_user_right sur \
+//										ON ssk.security_key_id = sur.security_key_id \
+//									INNER JOIN sec_user_in_group sug \
+//										ON sur.group_id = sug.group_id \
+//									WHERE \
+//										sur.user_org_id = ? \
+//										AND \
+//										(\
+//											ssk.module_id IS NULL OR ssk.module_id IN \
+//												( \
+//													SELECT	som.module_id \
+//													FROM	sec_owner_in_module som \
+//													WHERE	som.owner_id = ? \
+//													AND	(som.start_date IS NULL OR som.start_date <= ?) \
+//													AND	(som.end_date IS NULL OR som.end_date >=  ?) \
+//												) \
+//										) \
+//								) \
+//								AND NOT EXISTS \
+//									( \
+//										SELECT	* \
+//										FROM	sec_user_right surd2 \
+//										WHERE	surd.security_key_id = surd2.security_key_id \
+//										AND		surd2.user_org_id = ? \
+//										AND		surd2.is_denied = 1 \
+//									) \
+//						) \
+//						OR	surd.user_org_id = ? \
+//						AND	(surd.is_denied IS NULL OR surd.is_denied = 0) \
+//					\
+//					UNION \
+//					\
+//					SELECT 	ssk.security_key_id \
+//					FROM	sec_security_key ssk \
+//						INNER JOIN sec_owner_in_module som \
+//							ON som.module_id = ssk.module_id \
+//						WHERE	som.owner_id = ?\
+//							AND	(som.start_date IS NULL OR som.start_date <= ?) \
+//							AND	(som.end_date IS NULL OR som.end_date >=  ?) \
+//							AND NOT EXISTS \
+//							(\
+//								SELECT	* \
+//								FROM	sec_user_right surd \
+//								WHERE	surd.security_key_id = ssk.security_key_id \
+//								AND		surd.user_org_id = ? \
+//								AND		surd.is_denied = 1 \
+//							)";
+	
+	var _args = new Array()
+	_args[0] = _user_org_id
+	// MAVariazione - usa il proprietario di login invece che quello dell'utenza
+	_args[1] = globals.svy_sec_owner_id;
+	_args[2] = new Date()
+	_args[3] = new Date()
+	_args[4] = _user_org_id
+	_args[5] = _user_org_id;
+	
+	// MAVariazione
+//	_args[6] = globals.owner_id;
+//	_args[7] = new Date();
+//	_args[8] = new Date();
+//	_args[9] = globals.svy_sec_lgn_user_org_id;
+
+	var _dataset = databaseManager.getDataSetByQuery(_server, _query, _args, -1);
+
+	return _dataset;
+}
+
+/**
  *	Gets a property from the user properties
  *
  * @author Paul Bakker
@@ -1259,7 +1371,7 @@ function svy_sec_showSelectionDialog(dataSource, displayDataSet, returnDataProvi
 	
 	var form = solutionModel.cloneForm(formName, solutionModel.getForm('svy_sec_selection_dialog'));
 	form.dataSource = dataSource;
-	form.styleName = 'leaf_style'//'security';
+	form.styleName = 'leaf_style';
 	
 	var x = 0;
 	

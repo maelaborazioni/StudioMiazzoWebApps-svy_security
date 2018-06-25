@@ -21,7 +21,13 @@ function deleteRecord(event) {
  * @properties={typeid:24,uuid:"D33FDF3D-9B72-4096-B555-438A9BA4E97B"}
  */
 function addRecord(event) {
-	var _query = 'SELECT sec_group.group_id FROM sec_group, sec_organization WHERE sec_group.owner_id = sec_organization.owner_id AND sec_organization.organization_id = ? AND sec_group.group_id NOT IN (SELECT group_id FROM sec_user_in_group WHERE user_org_id = ?)';
+	var _query = 'SELECT sg.group_id \
+				  FROM sec_group sg, sec_organization so, sec_owner sow \
+			      WHERE sg.owner_id = so.owner_id \
+				  AND sg.owner_id = sow.owner_id \
+				  AND so.organization_id = ? \
+				  AND sg.group_id NOT IN (SELECT group_id FROM sec_user_in_group WHERE user_org_id = ?) \
+				  ORDER BY sow.name,so.name,sg.name';
 	var _arguments = [new String(forms.svy_sec_main_user_security.organizationID), forms.svy_sec_main_user_security.user_org_id];
 	var _dataSet = databaseManager.getDataSetByQuery(globals.nav_db_framework, _query, _arguments, -1);
 	

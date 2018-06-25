@@ -52,4 +52,6 @@ function addRecord(event)
 
 		forms.svy_sec_main_key_cathegory_tbl.foundset.loadRecords();
 	}
+	
+	forms.svy_sec_main.controller.readOnly = false;
 }

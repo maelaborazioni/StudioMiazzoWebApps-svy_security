@@ -46,6 +46,7 @@ function loadRecords() {
  *
  * @properties={typeid:24,uuid:"70F168DF-81BE-48D3-BF76-8D21CADD9F91"}
  */
-function onShow(firstShow, event) {
+function onShow(firstShow, event) 
+{
 	loadRecords();
 }

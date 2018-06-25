@@ -47,12 +47,18 @@ function deleteRecord(event)
  * @properties={typeid:24,uuid:"8C96A6E8-5764-4F52-A61E-4B8EBAF1E0D0"}
  */
 function addRecord(event) {
-	var _query = 'SELECT organization_id FROM sec_organization WHERE organization_id NOT IN (SELECT organization_id FROM sec_user_org WHERE user_id = ?)';
+	var _query = 'SELECT so.organization_id \
+	              FROM sec_organization so \
+	              INNER JOIN sec_owner sow ON so.owner_id = sow.owner_id \
+	              WHERE so.organization_id NOT IN \
+	              (SELECT organization_id FROM sec_user_org WHERE user_id = ?) \
+	              ORDER BY sow.name,so.name';
 	var _arguments = [forms.svy_sec_main_user_access.foundset.user_id];
 	var _dataSet = databaseManager.getDataSetByQuery(globals.nav_db_framework, _query, _arguments, -1);
 	
 	if (globals.svy_sec_showSelectionDialog('db:/svy_framework/sec_organization', _dataSet, ['organization_id'], ['name', 'sec_organization_to_sec_owner.name'], ['Organization', 'Owner'], [200, 200], 600, true) == 'select') {
 		var tempFoundset = forms['svy_sec_selection_dialog_sec_organization'].foundset.duplicateFoundSet();
+		tempFoundset.sort('sec_organization_to_sec_owner.name asc, name asc');
 		for (var i = 1; i <= tempFoundset.getSize(); i++) {
 			tempFoundset.setSelectedIndex(i);
 			

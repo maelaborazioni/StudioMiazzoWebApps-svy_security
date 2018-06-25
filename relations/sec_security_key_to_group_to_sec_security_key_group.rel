@@ -1,5 +1,4 @@
 allowCreationRelatedRecords:true,
-deleteRelatedRecords:true,
 foreignDataSource:"db:/svy_framework/sec_security_key_group",
 items:[
 {foreignColumnName:"sec_security_key_group_id",primaryDataProviderID:"sec_security_key_group_id",typeid:23,uuid:"169A9F41-60C1-4A35-9107-A29452087375"}
