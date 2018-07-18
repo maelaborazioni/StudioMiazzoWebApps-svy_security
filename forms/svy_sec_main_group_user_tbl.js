@@ -41,7 +41,7 @@ function addRecord(event) {
 	
 	if (globals.svy_sec_showSelectionDialog('db:/svy_framework/sec_user', _dataSet, ['user_id'], ['user_name'], ['Username'], [200], 600, true) == 'select') {
 		var tempFoundset = forms['svy_sec_selection_dialog_sec_user'].foundset.duplicateFoundSet();
-		/** @type {JSFoundset<db:/svy_framework/sec_user_org>} */
+		/** @type {JSFoundSet<db:/svy_framework/sec_user_org>} */
 		var _fsUserOrg = databaseManager.getFoundSet(globals.nav_db_framework, 'sec_user_org');
 		for (var i = 1; i <= tempFoundset.getSize(); i++) {
 			tempFoundset.setSelectedIndex(i);

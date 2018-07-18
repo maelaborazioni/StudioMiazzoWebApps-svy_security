@@ -15,7 +15,7 @@ function addRecord(event) {
 	
 	if (globals.svy_sec_showSelectionDialog('db:/svy_framework/sec_security_key', _dataSet, ['security_key_id'], ['name'], ['Key'], [200], 600, true) == 'select') {
 		var tempFoundset = forms['svy_sec_selection_dialog_sec_security_key'].foundset.duplicateFoundSet();
-		/** @type {JSFoundset<db:/svy_framework/sec_security_key>} */
+		/** @type {JSFoundSet<db:/svy_framework/sec_security_key>} */
 		var _fsSecurityKeys = databaseManager.getFoundSet('db:/svy_framework/sec_security_key');
 		for (var i = 1; i <= tempFoundset.getSize(); i++) {
 			tempFoundset.setSelectedIndex(i);

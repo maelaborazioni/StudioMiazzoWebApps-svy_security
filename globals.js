@@ -629,7 +629,7 @@ function svy_sec_setTableFilters() {
 						FROM 		sec_table_filter \
 						WHERE 		security_key_id IN (' + globals.nav.keys + ')'
 
-	/** @type {JSFoundset<db:/svy_framework/sec_table_filter>} */
+	/** @type {JSFoundSet<db:/svy_framework/sec_table_filter>} */
 	var _foundset = databaseManager.getFoundSet(_server, 'sec_table_filter')
 	_foundset.loadRecords(_query)
 	var _rec, _value;
@@ -700,7 +700,7 @@ function svy_sec_saveHash(rec, _server) {
 	if (!_server) {
 		_server = databaseManager.getDataSourceServerName(rec.foundset.getDataSource());
 	}
-	/** @type {JSFoundset<db:/svy_framework/sec_owner>} */
+	/** @type {JSFoundSet<db:/svy_framework/sec_owner>} */
 	var _fs = databaseManager.getFoundSet(_server,"sec_owner");
 	_fs.loadRecords(databaseManager.convertToDataSet([owner_id]))
 	var _owner = _fs.getRecord(1);
@@ -721,7 +721,7 @@ function svy_sec_checkHash(_ownerName, _serverName) {
 	if (!_serverName) {
 		_serverName = "svy_framework";
 	}
-	/** @type {JSFoundset<db:/svy_framework/sec_owner>} */
+	/** @type {JSFoundSet<db:/svy_framework/sec_owner>} */
 	var _fs = databaseManager.getFoundSet(_serverName,"sec_owner");
 	_fs.find();
 	_fs.name = _ownerName;

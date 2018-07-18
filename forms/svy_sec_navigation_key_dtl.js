@@ -18,7 +18,7 @@ function loadTree() {
 	
 		_ds_tree.addRow([1, 'Programs', null, null, null, null])
 	
-		/** @type {JSFoundset<db:/svy_framework/nav_program>} */
+		/** @type {JSFoundSet<db:/svy_framework/nav_program>} */
 		var _fs_programs = databaseManager.getFoundSet(globals.nav_db_framework,'nav_program')
 		_fs_programs.loadAllRecords()
 		var _id, _id_buttons, _id_popmenus, _id_button, _id_popmenu, _fs_popmenu, _rec_popmenu

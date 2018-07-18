@@ -105,7 +105,7 @@ function onDataChangeOwnerID(oldValue, newValue, event) {
  * @AllowToRunInFind
  */
 function setValueListItems() {
-	/** @type {JSFoundset<db:/svy_framework/sec_owner>} */
+	/** @type {JSFoundSet<db:/svy_framework/sec_owner>} */
 	var fsOwners = databaseManager.getFoundSet(globals.nav_db_framework, 'sec_owner');
 	fsOwners.find();
 	fsOwners.owner_id = owner_id;
