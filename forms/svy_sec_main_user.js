@@ -63,6 +63,8 @@ function onShow(firstShow, event) {
 		enableDisableOwnerID();
 		switchTab(null, 'access');
 	}
+	
+	databaseManager.setAutoSave(false);
 }
 
 /**
@@ -108,7 +110,6 @@ function onRecordSelection(event) {
 	
 	forms.svy_sec_main_user_security.setValueList();
 	forms.svy_sec_main_user_security.filterOrganization();
-
 	forms.svy_sec_main_user_security.enableDisableForm();
 }
 
@@ -185,12 +186,8 @@ function addUser(event)
  */
 function onDataChange(oldValue, newValue, event) 
 {
-	if(foundset.sec_user_to_sec_user_to_lavoratori.getSize() == 1)
-	{
-		databaseManager.startTransaction();
-		databaseManager.commitTransaction();
-	}
-	return true
+	elements.tab_users.enabled = true;
+	return true;
 }
 
 /**
@@ -269,4 +266,28 @@ function onActionMailButton(event)
 			else
 				globals.svy_mod_dialogs_global_showInfoDialog(mailAddress[i],'Test mail inviata correttamente','OK');
 		}	
+}
+
+/**
+ * Handle focus gained event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"AFF87A63-15AA-4CE9-B39E-1492AB89EDD3"}
+ */
+function onFocusGained(event) 
+{
+	elements.tab_users.enabled = false;
+}
+
+/**
+ * Handle focus lost event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"AA1BB205-6E68-4129-B3F6-9C3FD2A76066"}
+ */
+function onFocusLost(event) 
+{
+	elements.tab_users.enabled = true;
 }

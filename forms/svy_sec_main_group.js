@@ -237,3 +237,46 @@ function unfilterOwner(event)
 {
 	foundset.loadAllRecords();
 }
+
+/**
+ * Handle focus gained event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"10FBC7CD-AF2C-4D5C-94CD-B10593255415"}
+ */
+function onFocusGained(event) 
+{
+	elements.tab_groups.enabled = false;
+}
+
+/**
+ * Handle focus lost event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @private
+ *
+ * @properties={typeid:24,uuid:"BEF6528D-717E-4316-8493-2E7D7B967ACA"}
+ */
+function onFocusLost(event) 
+{
+	elements.tab_groups.enabled = true;
+}
+
+/**
+ * Handle changed data, return false if the value should not be accepted. In NGClient you can return also a (i18n) string, instead of false, which will be shown as a tooltip.
+ *
+ * @param {String} oldValue old value
+ * @param {String} newValue new value
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @return {Boolean}
+ *
+ * @properties={typeid:24,uuid:"254C6CBD-7899-4EDA-81BB-87A5169B1649"}
+ */
+function onDataChange(oldValue, newValue, event)
+{
+	elements.tab_groups.enabled = true;
+	return true
+}

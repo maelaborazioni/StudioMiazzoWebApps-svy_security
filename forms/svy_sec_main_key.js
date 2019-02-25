@@ -101,3 +101,44 @@ function addRecord(event) {
 	forms.svy_sec_main_key_tbl.addRecord(event);
 }
 
+/**
+ * Handle focus gained event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"6BB582BC-D187-4995-9343-B2E4931F4910"}
+ */
+function onFocusGained(event) 
+{
+	elements.tab_keys.enabled = false;
+}
+
+/**
+ * Handle focus lost event of the element.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @private
+ *
+ * @properties={typeid:24,uuid:"EF434C3C-D0D5-4578-82C7-40202D772CC6"}
+ */
+function onFocusLost(event) 
+{
+	elements.tab_keys_groups.enabled = true;
+}
+/**
+ * Handle changed data, return false if the value should not be accepted. In NGClient you can return also a (i18n) string, instead of false, which will be shown as a tooltip.
+ *
+ * @param {String} oldValue old value
+ * @param {String} newValue new value
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @return {Boolean}
+ *
+ * @properties={typeid:24,uuid:"01896597-ECB1-4DD8-826B-81E98E7BA8E2"}
+ */
+function onDataChange(oldValue, newValue, event) 
+{
+	elements.tab_keys.enabled = true;
+	return true
+}
