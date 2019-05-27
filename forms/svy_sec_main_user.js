@@ -71,18 +71,10 @@ function onShow(firstShow, event) {
  * @properties={typeid:24,uuid:"50157ED7-A862-46F5-BC6B-9CBD93C37628"}
  */
 function enableDisableOwnerID() {
-//	if (databaseManager.hasRecords(foundset.sec_user_to_sec_user_org)) {
-//		elements.owner_id.enabled = false;
-//	} else {
-//		elements.owner_id.enabled = true;
-//	}
 	// MAVariazione - Super admin can do anything
 	if (databaseManager.hasRecords(foundset.sec_user_to_sec_user_org)
-			&& !_to_sec_user$user_id.flag_super_administrator) {
-		elements.owner_id.enabled = false;
-	} else {
-		elements.owner_id.enabled = true;
-	}
+			&& _to_sec_user$user_id.flag_super_administrator) 
+		elements.owner_id.enabled = true;	
 }
 
 /**
@@ -186,7 +178,6 @@ function addUser(event)
  */
 function onDataChange(oldValue, newValue, event) 
 {
-	elements.tab_users.enabled = true;
 	return true;
 }
 
@@ -254,7 +245,7 @@ function onActionMailButton(event)
 		{
 			var success = plugins.mail.sendMail
 			(mailAddress[i],
-				'I am X <assistenza@studiomiazzo.it>',
+				'I am X <noreply@peoplegest.it>',
 				subject,
 				msgText,
 				null,
@@ -278,6 +269,7 @@ function onActionMailButton(event)
 function onFocusGained(event) 
 {
 	elements.tab_users.enabled = false;
+	application.output('focus gained ' + event.getElementName());
 }
 
 /**
@@ -290,4 +282,66 @@ function onFocusGained(event)
 function onFocusLost(event) 
 {
 	elements.tab_users.enabled = true;
+	application.output('focus lost ' + event.getElementName());
+}
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"9C62DBA5-D66F-42BC-B410-1C7269D8AA7E"}
+ */
+function onActionEdit(event)
+{
+	updateState(true);	
+}
+
+/**
+ * Aggiorna visualizzazione
+ *  
+ * @param enable
+ *
+ * @properties={typeid:24,uuid:"2C2FF52D-C557-4EDE-B794-E1E16EE87527"}
+ */
+function updateState(enable)
+{
+	elements.tab_users.enabled =
+	elements.btn_edit.enabled = !enable;
+		
+	elements.btn_save.enabled =
+	elements.btn_cancel.enabled =
+	elements.username.enabled =
+	elements.name.enabled =
+	elements.surname.enabled =
+    elements.phonenumber.enabled =
+    elements.mail.enabled =
+    elements.description.enabled =
+    elements.image.enabled = enable;
+}
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"EF63DF8E-D3CC-4839-9E10-4D17C7AC3E93"}
+ */
+function onActionConfirm(event) 
+{
+	updateState(false);
+	//TODO saving data...
+}
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @properties={typeid:24,uuid:"F1AB2298-378F-426A-8E7B-FEBCFFC50262"}
+ */
+function onActionCancel(event) 
+{
+	updateState(false);
+	// TODO rollback modifies...
 }
