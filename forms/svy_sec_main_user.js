@@ -330,7 +330,12 @@ function updateState(enable)
 function onActionConfirm(event) 
 {
 	updateState(false);
-	//TODO saving data...
+	// saving data...
+	if(!databaseManager.saveData())
+	{
+		databaseManager.rollbackTransaction();
+		globals.svy_mod_dialogs_global_showInfoDialog('Gestione utenze','Non è stato possibile salvare i dati','Ok');
+	}
 }
 
 /**
@@ -343,5 +348,6 @@ function onActionConfirm(event)
 function onActionCancel(event) 
 {
 	updateState(false);
-	// TODO rollback modifies...
+	// rollback modifies...
+	databaseManager.rollbackTransaction();
 }
