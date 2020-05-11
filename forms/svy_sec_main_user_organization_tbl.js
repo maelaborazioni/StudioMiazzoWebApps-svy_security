@@ -26,9 +26,8 @@ function deleteRecord(event)
 	var sql = "delete from sec_user_org \
                where user_org_id = ?";
     var success = plugins.rawSQL.executeSQL('svy_framework',
-                                            'sec_user_org',
-	                                         sql,
-	                                         [foundset.user_org_id]);
+                                            sql,
+	                                        [foundset.user_org_id]);
     if(success)
     {
     	plugins.rawSQL.flushAllClientsCache('svy_framework',
